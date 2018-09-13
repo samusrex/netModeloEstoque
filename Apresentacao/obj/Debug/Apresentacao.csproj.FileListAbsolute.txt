@@ -1,0 +1,8 @@
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\Apresentacao.exe.config
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\Apresentacao.exe
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\Apresentacao.pdb
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\obj\Debug\Apresentacao.csprojResolveAssemblyReference.cache
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\obj\Debug\Apresentacao.exe
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\obj\Debug\Apresentacao.pdb
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\Dominio.dll
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\Dominio.pdb
