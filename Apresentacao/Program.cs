@@ -23,7 +23,8 @@ namespace Apresentacao
 
             IEstoque Netflix = new AcervoFilmes();
 
-            foreach (var item in novosFilmes) {
+            foreach (var item in novosFilmes)
+            {
 
                 Netflix.Adicione(item);
             }
@@ -37,6 +38,21 @@ namespace Apresentacao
             locacao.Totalizar();
 
             locacao.RealizaPagamento(20.80);
+
+
+
+            var novosProdutos = new List<IItem>()
+            {
+                new Produto(){ ProdutoId = 1, Nome="X BOX ONE X", Preco=2500.00,Tipo = Produto.Categoria.GAMES },
+                new Produto(){ ProdutoId = 1, Nome="X BOX ONE S", Preco=1500.00,Tipo = Produto.Categoria.GAMES },
+                new Produto(){ ProdutoId = 1, Nome="PS4 PRO",     Preco=1900.00,Tipo = Produto.Categoria.GAMES },
+                new Produto(){ ProdutoId = 1, Nome="PS4",         Preco=1500.00,Tipo = Produto.Categoria.GAMES },
+
+            };
+
+
+
+
 
             Console.ReadKey();
 
