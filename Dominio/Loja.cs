@@ -8,36 +8,79 @@ namespace Dominio
 {
     public class Loja : ICompra
     {
+        IEstoque estoque;
+        List<Produto> MinhasCompras = new List<Produto>();
+        double Total = 0;
 
+        public Loja(IEstoque stck)
+        {
+            this.estoque = stck;
+        }
 
         public void AdicionaItens(IItem it)
         {
-            throw new NotImplementedException();
+            MinhasCompras.Add((Produto)it);
         }
 
         public IList<IItem> Compras()
         {
-            throw new NotImplementedException();
+            return this.MinhasCompras.ToList<IItem>();
         }
 
         public bool EstaDisponivel(IItem consulta)
         {
-            throw new NotImplementedException();
+            Produto produto = (Produto)consulta;
+
+
+            if (estoque.Conte(produto) > 0)
+            {
+
+                return true;
+            }
+            else
+            {
+
+                return false;
+
+            }
+
+
+
         }
 
         public void RealizaPagamento(double valor)
         {
-            throw new NotImplementedException();
+            if (Total >= valor)
+            {
+
+                Console.WriteLine("Pagamento insuficiente");
+            }
+            else if (Total == valor)
+            {
+
+                Console.WriteLine("Pagamento Realizado.");
+            }
+            else if (valor >= Total)
+            {
+
+                Console.WriteLine("Pagamento Realizado, Seu troco é de {0}", (valor - Total));
+            }
         }
 
         public void RetiraItens(IItem i)
         {
-            throw new NotImplementedException();
+            MinhasCompras.Remove((Produto)i);
         }
 
         public double Totalizar()
         {
-            throw new NotImplementedException();
+            foreach (var item in MinhasCompras)
+            {
+
+                Total += item.Preco;
+            }
+
+            return this.Total;
         }
     }
 }

@@ -44,11 +44,35 @@ namespace Apresentacao
             var novosProdutos = new List<IItem>()
             {
                 new Produto(){ ProdutoId = 1, Nome="X BOX ONE X", Preco=2500.00,Tipo = Produto.Categoria.GAMES },
-                new Produto(){ ProdutoId = 1, Nome="X BOX ONE S", Preco=1500.00,Tipo = Produto.Categoria.GAMES },
-                new Produto(){ ProdutoId = 1, Nome="PS4 PRO",     Preco=1900.00,Tipo = Produto.Categoria.GAMES },
-                new Produto(){ ProdutoId = 1, Nome="PS4",         Preco=1500.00,Tipo = Produto.Categoria.GAMES },
+                new Produto(){ ProdutoId = 2, Nome="X BOX ONE S", Preco=1500.00,Tipo = Produto.Categoria.GAMES },
+                new Produto(){ ProdutoId = 3, Nome="PS4 PRO",     Preco=1900.00,Tipo = Produto.Categoria.GAMES },
+                new Produto(){ ProdutoId = 4, Nome="PS4",         Preco=1500.00,Tipo = Produto.Categoria.GAMES },
 
             };
+
+            IEstoque estoqueDaLoja = new CentroDistribuicao();
+
+            foreach (var item in novosProdutos) {
+
+                estoqueDaLoja.Adicione(item);
+
+            }
+
+
+            Loja compra = new Loja(estoqueDaLoja);
+
+            //Adiciona o X Box One X
+            compra.AdicionaItens(novosProdutos[0]);
+            //Retira o X Box One X
+            compra.RetiraItens(novosProdutos[0]);
+
+            compra.AdicionaItens(novosProdutos[3]);
+
+            compra.Totalizar();
+
+            compra.RealizaPagamento(2000);
+
+
 
 
 
