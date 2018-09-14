@@ -35,9 +35,15 @@ namespace Apresentacao
             locacao.AdicionaItens(novosFilmes[0]);
             locacao.AdicionaItens(novosFilmes[1]);
 
-            locacao.Totalizar();
 
+            locacao.Totalizar();
+            Console.WriteLine("----------NetFlix------------");
             locacao.RealizaPagamento(20.80);
+
+            foreach (Filme item in locacao.Compras())
+            {
+                Console.WriteLine("Filmes {0}  Preço: {1}", item.Nome, item.Preco );
+            }
 
 
 
@@ -52,15 +58,12 @@ namespace Apresentacao
 
             IEstoque estoqueDaLoja = new CentroDistribuicao();
 
-            foreach (var item in novosProdutos) {
-
+            foreach (var item in novosProdutos)
+            {
                 estoqueDaLoja.Adicione(item);
-
             }
 
-
             Loja compra = new Loja(estoqueDaLoja);
-
             //Adiciona o X Box One X
             compra.AdicionaItens(novosProdutos[0]);
             //Retira o X Box One X
@@ -70,8 +73,17 @@ namespace Apresentacao
 
             compra.Totalizar();
 
+            Console.WriteLine("----------Loja de Produtos------------");
+            foreach (Produto item in compra.Compras())
+            {
+                Console.WriteLine("Items: {0} Preço: {1}", item.Nome, item.Preco);
+            }
+           
+
+
             compra.RealizaPagamento(2000);
 
+            Console.WriteLine("----------------------");
 
 
 
