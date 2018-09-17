@@ -101,15 +101,15 @@ namespace Apresentacao
                 Cartao = "100-80"
             };
 
-            var dup1 = new DuplicataReceber() { Id = 1, Cliente = cliente, Valor = 10, Vencimento = Convert.ToDateTime("2018/09/10") , Sigla ="DP" };
-            var dup2 = new DuplicataReceber() { Id = 2, Cliente = cliente, Valor = 20.20, Vencimento = Convert.ToDateTime("2018/09/10") , Sigla = "DP" };
-            var dup3 = new DuplicataReceber() { Id = 3, Cliente = cliente, Valor = 10.20, Vencimento = Convert.ToDateTime("2018/09/20") , Sigla = "DP" };
-            var dup4 = new DuplicataReceber() { Id = 4, Cliente = cliente, Valor = 2, Vencimento = Convert.ToDateTime("2018/09/18") , Sigla = "DP" };
+            var dup1 = new DuplicataReceber() { Id = 1, Pessoa = cliente, Valor = 10, Vencimento = Convert.ToDateTime("2018/09/10") , Sigla ="DP" };
+            var dup2 = new DuplicataReceber() { Id = 2, Pessoa = cliente, Valor = 20.20, Vencimento = Convert.ToDateTime("2018/09/10") , Sigla = "DP" };
+            var dup3 = new DuplicataReceber() { Id = 3, Pessoa = cliente, Valor = 10.20, Vencimento = Convert.ToDateTime("2018/09/20") , Sigla = "DP" };
+            var dup4 = new DuplicataReceber() { Id = 4, Pessoa = cliente, Valor = 2, Vencimento = Convert.ToDateTime("2018/09/18") , Sigla = "DP" };
 
-            var nota1 = new NotaPromissoriaReceber() { Id = 4, Cliente = cliente, Valor = 2, Vencimento = Convert.ToDateTime("2018/09/18") };
+            var nota1 = new NotaPromissoriaReceber() { Id = 4, Pessoa = cliente, Valor = 2, Vencimento = Convert.ToDateTime("2018/09/18") };
 
             //Valor a parcelar
-            var dup5 = new DuplicataReceber() { Id = 5, Cliente = cliente, Valor = 2000, Vencimento = Convert.ToDateTime("2018/09/17") , Sigla="NP"};
+            var dup5 = new DuplicataReceber() { Id = 5, Pessoa = cliente, Valor = 2000, Vencimento = Convert.ToDateTime("2018/09/17") , Sigla="NP"};
 
             ITituloReceber rec = new TituloReceber();
             rec.Adicionar(dup1);
@@ -128,12 +128,12 @@ namespace Apresentacao
             {
                 if (item.Referencia != null)
                 {
-                    Console.WriteLine("Id:{0} {1} {2} {3} Ref:{4}", item.Id, item.Cliente.Nome, item.Valor, item.Vencimento.ToShortDateString(), item.Referencia.Id);
+                    Console.WriteLine("Id:{0} {1} {2} {3} Ref:{4}", item.Id, item.Pessoa.Nome, item.Valor, item.Vencimento.ToShortDateString(), item.Referencia.Id);
 
                 }
                 else
                 {
-                    Console.WriteLine("Id:{3} {0} {1} {2}", item.Cliente.Nome, item.Valor, item.Vencimento.ToShortDateString(), item.Id);
+                    Console.WriteLine("Id:{3} {0} {1} {2}", item.Pessoa.Nome, item.Valor, item.Vencimento.ToShortDateString(), item.Id);
                 }
             }
 

@@ -26,7 +26,7 @@ namespace Gestao
         public IList<Titulo> ObterPorCliente(Cliente cli)
         {
             var retorno = this.rec;
-            retorno.Where(c => c.Cliente == cli).ToList();
+            retorno.Where(c => c.Pessoa == cli).ToList();
             return retorno.ToList<Titulo>();
 
         }
@@ -45,7 +45,7 @@ namespace Gestao
                         var parcela = new DuplicataReceber()
                         {
                             Id = (rec.LastOrDefault().Id + 1),
-                            Cliente = tituloTotal.Cliente,
+                            Pessoa = tituloTotal.Pessoa,
                             Valor = (tituloTotal.Valor / quantidade),
                             Vencimento = DateTime.Now.AddMonths(i),
                             Referencia = tituloTotal,
@@ -93,7 +93,7 @@ namespace Gestao
         IList<Titulo> ITituloReceber.ObterPorCliente(Cliente cli)
         {
             var retorno = this.rec;
-            retorno.Where(c => c.Cliente == cli).ToList();
+            retorno.Where(c => c.Pessoa == cli).ToList();
             return retorno.ToList<Titulo>();
 
         }

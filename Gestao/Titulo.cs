@@ -9,7 +9,7 @@ namespace Gestao
     public abstract class Titulo
     {
         public int Id { get; set; }
-        public Cliente Cliente { get; set; }
+        public Pessoa Pessoa { get; set; }
         public double Valor { get; set; }
         public DateTime Vencimento { get; set; }
         public string Sigla { get; set; }
