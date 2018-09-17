@@ -45,8 +45,10 @@
     <Compile Include="ITitulo.cs" />
     <Compile Include="ITituloPagar.cs" />
     <Compile Include="ITituloReceber.cs" />
+    <Compile Include="NotaPromissoria.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Titulo.cs" />
     <Compile Include="TituloReceber.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

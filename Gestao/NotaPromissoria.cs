@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Gestao
 {
-    public class DuplicataReceber : Titulo
+    public class NotaPromissoriaReceber : Titulo
     {
-        public DuplicataReceber Referencia { get; set; }
+        public NotaPromissoriaReceber Referencia { get; set; }
+
     }
 }

@@ -101,13 +101,15 @@ namespace Apresentacao
                 Cartao = "100-80"
             };
 
-            var dup1 = new Duplicata() { Id = 1, Cliente = cliente, Valor = 10, Vencimento = Convert.ToDateTime("2018/09/10") };
-            var dup2 = new Duplicata() { Id = 2, Cliente = cliente, Valor = 20.20, Vencimento = Convert.ToDateTime("2018/09/10") };
-            var dup3 = new Duplicata() { Id = 3, Cliente = cliente, Valor = 10.20, Vencimento = Convert.ToDateTime("2018/09/20") };
-            var dup4 = new Duplicata() { Id = 4, Cliente = cliente, Valor = 2, Vencimento = Convert.ToDateTime("2018/09/18") };
+            var dup1 = new DuplicataReceber() { Id = 1, Cliente = cliente, Valor = 10, Vencimento = Convert.ToDateTime("2018/09/10") , Sigla ="DP" };
+            var dup2 = new DuplicataReceber() { Id = 2, Cliente = cliente, Valor = 20.20, Vencimento = Convert.ToDateTime("2018/09/10") , Sigla = "DP" };
+            var dup3 = new DuplicataReceber() { Id = 3, Cliente = cliente, Valor = 10.20, Vencimento = Convert.ToDateTime("2018/09/20") , Sigla = "DP" };
+            var dup4 = new DuplicataReceber() { Id = 4, Cliente = cliente, Valor = 2, Vencimento = Convert.ToDateTime("2018/09/18") , Sigla = "DP" };
+
+            var nota1 = new NotaPromissoriaReceber() { Id = 4, Cliente = cliente, Valor = 2, Vencimento = Convert.ToDateTime("2018/09/18") };
 
             //Valor a parcelar
-            var dup5 = new Duplicata() { Id = 5, Cliente = cliente, Valor = 2000, Vencimento = Convert.ToDateTime("2018/09/17") };
+            var dup5 = new DuplicataReceber() { Id = 5, Cliente = cliente, Valor = 2000, Vencimento = Convert.ToDateTime("2018/09/17") , Sigla="NP"};
 
             ITituloReceber rec = new TituloReceber();
             rec.Adicionar(dup1);
@@ -115,13 +117,14 @@ namespace Apresentacao
             rec.Adicionar(dup3);
             rec.Adicionar(dup4);
             rec.Adicionar(dup5);
+
             //ParcelarPrimeiraVez
             rec.Parcelar(dup5, 4);
 
 
             var listar = rec.ObterPorCliente(cliente);
 
-            foreach (Duplicata item in listar)
+            foreach (DuplicataReceber item in listar)
             {
                 if (item.Referencia != null)
                 {
@@ -130,17 +133,14 @@ namespace Apresentacao
                 }
                 else
                 {
-
                     Console.WriteLine("Id:{3} {0} {1} {2}", item.Cliente.Nome, item.Valor, item.Vencimento.ToShortDateString(), item.Id);
-
                 }
             }
 
             //tentar parcelar novamente.
             rec.Parcelar(dup5, 3);
 
-
-
+            
 
 
 

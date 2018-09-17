@@ -9,38 +9,40 @@ namespace Gestao
     public class TituloReceber : ITituloReceber
     {
 
-        private List<Duplicata> rec = new List<Duplicata>();
+        private List<DuplicataReceber> rec = new List<DuplicataReceber>();
 
         public TituloReceber()
         {
 
         }
 
-        public void Adicionar(ITitulo novo)
+
+
+        public void Adicionar(Titulo novo)
         {
-            rec.Add((Duplicata)novo);
+            rec.Add((DuplicataReceber)novo);
         }
 
-        public IList<ITitulo> ObterPorCliente(Cliente cli)
+        public IList<Titulo> ObterPorCliente(Cliente cli)
         {
             var retorno = this.rec;
             retorno.Where(c => c.Cliente == cli).ToList();
-            return retorno.ToList<ITitulo>();
+            return retorno.ToList<Titulo>();
 
         }
 
-        public void Parcelar(ITitulo valor, int quantidade)
+        public void Parcelar(Titulo valor, int quantidade)
         {
             if (SeParcelado(valor) == false)
             {
                 if (valor != null && quantidade > 0)
                 {
-                    var tituloTotal = (Duplicata)valor;
+                    var tituloTotal = (DuplicataReceber)valor;
 
                     for (int i = 1; i <= quantidade; i++)
                     {
 
-                        var parcela = new Duplicata()
+                        var parcela = new DuplicataReceber()
                         {
                             Id = (rec.LastOrDefault().Id + 1),
                             Cliente = tituloTotal.Cliente,
@@ -68,14 +70,17 @@ namespace Gestao
 
         }
 
-        public void Remover(ITitulo excluir)
+
+        public void Remover(Titulo excluir)
         {
             throw new NotImplementedException();
         }
 
-        public bool SeParcelado(ITitulo tit)
+
+
+        public bool SeParcelado(Titulo te)
         {
-            Duplicata d = (Duplicata)tit;
+            DuplicataReceber d = (DuplicataReceber)te;
             var resultado = rec.Where(c => c.Referencia == d).FirstOrDefault();
 
             if (resultado == null)
@@ -83,10 +88,13 @@ namespace Gestao
                 return false;
             }
             return true;
+        }
 
-
-
-
+        IList<Titulo> ITituloReceber.ObterPorCliente(Cliente cli)
+        {
+            var retorno = this.rec;
+            retorno.Where(c => c.Cliente == cli).ToList();
+            return retorno.ToList<Titulo>();
 
         }
     }

@@ -9,11 +9,11 @@ namespace Gestao
     public interface ITituloReceber
     {
 
-        void Adicionar(ITitulo novo);
-        void Remover(ITitulo excluir);
-        bool SeParcelado(ITitulo te);
-        void Parcelar(ITitulo valor, int quantidade);
-        IList<ITitulo> ObterPorCliente(Cliente cli);
+        void Adicionar(Titulo novo);
+        void Remover(Titulo excluir);
+        bool SeParcelado(Titulo te);
+        void Parcelar(Titulo valor, int quantidade);
+        IList<Titulo> ObterPorCliente(Cliente cli);
 
 
     }
