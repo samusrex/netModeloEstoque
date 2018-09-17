@@ -31,38 +31,63 @@ namespace Gestao
 
         public void Parcelar(ITitulo valor, int quantidade)
         {
-            if (valor != null && quantidade > 0)
+            if (SeParcelado(valor) == false)
             {
-                var tituloTotal = (Duplicata)valor;
+                if (valor != null && quantidade > 0)
+                {
+                    var tituloTotal = (Duplicata)valor;
 
-                for (int i = 1; i <= quantidade; i++)
+                    for (int i = 1; i <= quantidade; i++)
+                    {
+
+                        var parcela = new Duplicata()
+                        {
+                            Id = (rec.LastOrDefault().Id + 1),
+                            Cliente = tituloTotal.Cliente,
+                            Valor = (tituloTotal.Valor / quantidade),
+                            Vencimento = DateTime.Now.AddMonths(i),
+                            Referencia = tituloTotal,
+
+                        };
+
+                        rec.Add(parcela);
+                    }
+
+                }
+                else
                 {
 
-                    var parcela = new Duplicata()
-                    {
-                        Id = (rec.LastOrDefault().Id + 1),
-                        Cliente = tituloTotal.Cliente,
-                        Valor = (tituloTotal.Valor / quantidade),
-                        Vencimento = DateTime.Now.AddMonths(i),
-                        Referencia = tituloTotal,
+                    Console.WriteLine("Não há quantidade de parcelas ou valor inexistente.");
 
-                    };
-
-                    rec.Add(parcela);
                 }
-
             }
             else
             {
-
-                Console.WriteLine("Não há quantidade de parcelas ou valor inexistente.");
-
+                Console.WriteLine("Valor já parcelado");
             }
+
         }
 
         public void Remover(ITitulo excluir)
         {
             throw new NotImplementedException();
+        }
+
+        public bool SeParcelado(ITitulo tit)
+        {
+            Duplicata d = (Duplicata)tit;
+            var resultado = rec.Where(c => c.Referencia == d).FirstOrDefault();
+
+            if (resultado == null)
+            {
+                return false;
+            }
+            return true;
+
+
+
+
+
         }
     }
 }

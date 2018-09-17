@@ -115,8 +115,9 @@ namespace Apresentacao
             rec.Adicionar(dup3);
             rec.Adicionar(dup4);
             rec.Adicionar(dup5);
-
+            //ParcelarPrimeiraVez
             rec.Parcelar(dup5, 4);
+
 
             var listar = rec.ObterPorCliente(cliente);
 
@@ -124,15 +125,20 @@ namespace Apresentacao
             {
                 if (item.Referencia != null)
                 {
-                    Console.WriteLine("Id:{0} {1} {2} {3} Ref:{4}", item.Id, item.Cliente.Nome, item.Valor, item.Vencimento.ToShortDateString(),item.Referencia.Id);
+                    Console.WriteLine("Id:{0} {1} {2} {3} Ref:{4}", item.Id, item.Cliente.Nome, item.Valor, item.Vencimento.ToShortDateString(), item.Referencia.Id);
 
                 }
-                else {
+                else
+                {
 
-                    Console.WriteLine("Id:{3} {0} {1} {2}", item.Cliente.Nome, item.Valor, item.Vencimento.ToShortDateString(),item.Id);
+                    Console.WriteLine("Id:{3} {0} {1} {2}", item.Cliente.Nome, item.Valor, item.Vencimento.ToShortDateString(), item.Id);
 
                 }
             }
+
+            //tentar parcelar novamente.
+            rec.Parcelar(dup5, 3);
+
 
 
 
