@@ -11,7 +11,7 @@ namespace Gestao
       
         void Adicionar(ITitulo novo);
         void Remover(ITitulo excluir);
-        void Parcelar(Cliente cli, double valor, int quantidade);
+        void Parcelar(ITitulo valor, int quantidade);
         IList<ITitulo> ObterPorCliente(Cliente cli);
 
 

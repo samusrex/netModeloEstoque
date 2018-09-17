@@ -106,20 +106,37 @@ namespace Apresentacao
             var dup3 = new Duplicata() { Id = 3, Cliente = cliente, Valor = 10.20, Vencimento = Convert.ToDateTime("2018/09/20") };
             var dup4 = new Duplicata() { Id = 4, Cliente = cliente, Valor = 2, Vencimento = Convert.ToDateTime("2018/09/18") };
 
-
+            //Valor a parcelar
+            var dup5 = new Duplicata() { Id = 5, Cliente = cliente, Valor = 2000, Vencimento = Convert.ToDateTime("2018/09/17") };
 
             ITituloReceber rec = new TituloReceber();
             rec.Adicionar(dup1);
             rec.Adicionar(dup2);
             rec.Adicionar(dup3);
             rec.Adicionar(dup4);
+            rec.Adicionar(dup5);
+
+            rec.Parcelar(dup5, 4);
 
             var listar = rec.ObterPorCliente(cliente);
 
             foreach (Duplicata item in listar)
             {
-                Console.WriteLine("{0} {1} {2}", item.Cliente.Nome, item.Valor, item.Vencimento.ToShortDateString());
+                if (item.Referencia != null)
+                {
+                    Console.WriteLine("Id:{0} {1} {2} {3} Ref:{4}", item.Id, item.Cliente.Nome, item.Valor, item.Vencimento.ToShortDateString(),item.Referencia.Id);
+
+                }
+                else {
+
+                    Console.WriteLine("Id:{3} {0} {1} {2}", item.Cliente.Nome, item.Valor, item.Vencimento.ToShortDateString(),item.Id);
+
+                }
             }
+
+
+
+
 
             Console.ReadKey();
 

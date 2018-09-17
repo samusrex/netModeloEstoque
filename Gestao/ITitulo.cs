@@ -8,5 +8,6 @@ namespace Gestao
 {
     public interface ITitulo
     {
+     
     }
 }

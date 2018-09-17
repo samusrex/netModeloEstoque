@@ -27,13 +27,37 @@ namespace Gestao
             retorno.Where(c => c.Cliente == cli).ToList();
             return retorno.ToList<ITitulo>();
 
-
         }
 
-
-        public void Parcelar(Cliente cli, double valor, int quantidade)
+        public void Parcelar(ITitulo valor, int quantidade)
         {
-            throw new NotImplementedException();
+            if (valor != null && quantidade > 0)
+            {
+                var tituloTotal = (Duplicata)valor;
+
+                for (int i = 1; i <= quantidade; i++)
+                {
+
+                    var parcela = new Duplicata()
+                    {
+                        Id = (rec.LastOrDefault().Id + 1),
+                        Cliente = tituloTotal.Cliente,
+                        Valor = (tituloTotal.Valor / quantidade),
+                        Vencimento = DateTime.Now.AddMonths(i),
+                        Referencia = tituloTotal,
+
+                    };
+
+                    rec.Add(parcela);
+                }
+
+            }
+            else
+            {
+
+                Console.WriteLine("Não há quantidade de parcelas ou valor inexistente.");
+
+            }
         }
 
         public void Remover(ITitulo excluir)
