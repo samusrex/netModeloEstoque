@@ -1,0 +1,5 @@
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Gestao\bin\Debug\Gestao.dll
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Gestao\bin\Debug\Gestao.pdb
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Gestao\obj\Debug\Gestao.csprojResolveAssemblyReference.cache
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Gestao\obj\Debug\Gestao.dll
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Gestao\obj\Debug\Gestao.pdb

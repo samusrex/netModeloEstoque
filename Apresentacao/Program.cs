@@ -1,4 +1,5 @@
 ﻿using Dominio;
+using Gestao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace Apresentacao
 
             foreach (Filme item in locacao.Compras())
             {
-                Console.WriteLine("Filmes {0}  Preço: {1}", item.Nome, item.Preco );
+                Console.WriteLine("Filmes {0}  Preço: {1}", item.Nome, item.Preco);
             }
 
 
@@ -78,19 +79,51 @@ namespace Apresentacao
             {
                 Console.WriteLine("Items: {0} Preço: {1}", item.Nome, item.Preco);
             }
-           
+
 
 
             compra.RealizaPagamento(2000);
 
             Console.WriteLine("----------------------");
+            //Console.ReadKey();
 
 
 
+            Console.WriteLine("------------------Contar a Receber------------------");
 
 
+
+            var cliente = new Cliente()
+            {
+                Nome = "Halyson",
+                Sobrenome = "Mendonca",
+                Cpf = "008.505.503.21",
+                Cartao = "100-80"
+            };
+
+            var dup1 = new Duplicata() { Id = 1, Cliente = cliente, Valor = 10, Vencimento = Convert.ToDateTime("2018/09/10") };
+            var dup2 = new Duplicata() { Id = 2, Cliente = cliente, Valor = 20.20, Vencimento = Convert.ToDateTime("2018/09/10") };
+            var dup3 = new Duplicata() { Id = 3, Cliente = cliente, Valor = 10.20, Vencimento = Convert.ToDateTime("2018/09/20") };
+            var dup4 = new Duplicata() { Id = 4, Cliente = cliente, Valor = 2, Vencimento = Convert.ToDateTime("2018/09/18") };
+
+
+
+            ITituloReceber rec = new TituloReceber();
+            rec.Adicionar(dup1);
+            rec.Adicionar(dup2);
+            rec.Adicionar(dup3);
+            rec.Adicionar(dup4);
+
+            var listar = rec.ObterPorCliente(cliente);
+
+            foreach (Duplicata item in listar)
+            {
+                Console.WriteLine("{0} {1} {2}", item.Cliente.Nome, item.Valor, item.Vencimento.ToShortDateString());
+            }
 
             Console.ReadKey();
+
+
 
 
 

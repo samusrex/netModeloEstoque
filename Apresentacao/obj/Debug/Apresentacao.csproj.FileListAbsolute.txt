@@ -6,3 +6,14 @@ C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentac
 C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\obj\Debug\Apresentacao.pdb
 C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\Dominio.dll
 C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\Dominio.pdb
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\EntityFramework.dll
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\Gestao.dll
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\System.Data.SQLite.dll
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\Gestao.pdb
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\EntityFramework.xml
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\System.Data.SQLite.xml
+C:\Users\hmendonca\Documents\Visual Studio 2017\Projects\Projetos-GIT\Apresentacao\Apresentacao\bin\Debug\System.Data.SQLite.dll.config
